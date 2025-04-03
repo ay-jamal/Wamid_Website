@@ -1,0 +1,28 @@
+.logo {
+  width: 130px;
+}
+
+li {
+  a {
+    color: #fff;
+    &:hover {
+      color: var(--main-bg);
+    }
+  }
+  a.active {
+    color: var(--main-bg);
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem;
+  }
+  .navbar-toggler {
+    background-color: #fff;
+  }
+  button.primary {
+    display: none;
+  }
+}

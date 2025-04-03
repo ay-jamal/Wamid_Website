@@ -1,0 +1,32 @@
+.info-socailMedia {
+  width: 100%;
+  background-color: var(--main-bg);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+  p {
+    font-size: 14px;
+    font-weight: normal;
+    height: 100%;
+    color: #fff;
+    padding: 0.3rem;
+    background-color: rgba(0, 0, 0, 15%);
+  }
+  .icon {
+    width: 20px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .info-socailMedia {
+    p {
+      font-size: 8px !important;
+    }
+    .icon {
+      width: 8px !important;
+    }
+  }
+}

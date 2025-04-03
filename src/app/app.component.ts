@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ContactInfoComponent } from './core/components/contact-info/contact-info.component';
+import { HeaderComponent } from './core/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,
+    ContactInfoComponent,
+    HeaderComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
