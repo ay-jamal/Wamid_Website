@@ -99,5 +99,26 @@
     height: 300px;
     object-fit: cover;
   }
+}
+
+.newes-section {
+  background-color: var(--secondry-bg) !important;
+}
+
+.carousel-item {
+  img {
+    height: 620px;
+    max-height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+@media (max-width:767px) {
   
+.carousel-item {
+  img {
+    height: 230px;
+  }
+}
 }
