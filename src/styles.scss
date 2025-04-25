@@ -155,3 +155,18 @@ button.basic-outline {
   background-color: transparent !important;
   color: #fff !important;
 }
+
+input,
+textarea {
+  border: 0;
+  background-color: rgb(0, 163, 204, 5%);
+  padding: 0.5rem;
+  border-radius: 10px;
+  outline: 0;
+  width: 100%;
+}
+
+textarea{
+  padding: 1rem;
+  text-align: right;
+}
