@@ -10,5 +10,10 @@ export const routes: Routes = [
     , {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'our-partners',
+        loadComponent: () => import('./pages/our-partners/our-partners.component')
+            .then(m => m.OurPartnersComponent)
     }
 ];

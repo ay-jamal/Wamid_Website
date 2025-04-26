@@ -1,0 +1,44 @@
+.our-partners-container {
+  background-color: #ebecec;
+}
+
+.carousel {
+  position: relative;
+  .carousel-caption {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: #fff;
+    h5 {
+      padding: 0.8rem;
+      border-radius: 100px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+}
+
+.section-name {
+  justify-content: center !important;
+}
+
+.our-partners-logos {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 80%;
+  img {
+    width: 150px;
+    object-fit: contain;
+  }
+}
