@@ -55,6 +55,8 @@
         </li>
       </ul>
     </div>
-    <button class="btn primary">اتصل بنا</button>
+    <button class="btn primary" [ngClass]="{ 'basic': isNotHome() }">
+      اتصل بنا
+    </button>
   </div>
 </nav>
