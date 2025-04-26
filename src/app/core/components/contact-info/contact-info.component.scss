@@ -14,6 +14,7 @@
   }
   .icon {
     width: 20px;
+    object-fit: contain;
     &:hover {
       opacity: 0.8;
     }
