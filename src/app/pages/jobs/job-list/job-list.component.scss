@@ -1,0 +1,76 @@
+.carousel {
+  position: relative;
+  .carousel-caption {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: #fff;
+    h5 {
+      padding: 0.8rem;
+      border-radius: 100px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+}
+
+.jobs-container {
+  background-color: #ebecec;
+  .section-name {
+    justify-content: center !important;
+  }
+  .job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    width: 80%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    .start {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      p.title{
+        font-size: 18px;
+      }
+      p.location{
+        font-size: 12px;
+      }
+    }
+    img {
+      width: 50px;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .job-card {
+    flex-direction: column;
+    img{
+      width: 30px !important;
+    }
+    p.title{
+      font-size: 10px;
+    }
+    p.location{
+      font-size: 8px;
+    }
+    button{
+      font-size: 10px;
+      align-self: flex-end;
+    }
+  }
+}
