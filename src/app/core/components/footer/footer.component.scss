@@ -56,6 +56,7 @@
     background-color: rgba(1, 1, 1, 19%);
     p {
       color: #fff;
+      text-align: center;
     }
     img {
       width: 100px;
@@ -87,12 +88,5 @@ h4 {
     flex-direction: row !important;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  .copyright {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 10px;
-    font-size: 10px;
-    align-items: center;
   }
 }
