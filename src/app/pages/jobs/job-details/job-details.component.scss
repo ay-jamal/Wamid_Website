@@ -1,0 +1,68 @@
+.carousel {
+  position: relative;
+  .carousel-caption {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: #fff;
+    h5 {
+      padding: 0.8rem;
+      border-radius: 100px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  p.title {
+    font-size: 14px;
+  }
+  .descreption {
+    font-size: 8px;
+  }
+  ul {
+    li {
+      font-size: 8px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.descreption {
+  font-size: 14px;
+}
+
+ul {
+  li {
+    font-size: 14px;
+    list-style: disc;
+    margin-bottom: 10px;
+  }
+}
+
+li::marker {
+  color: var(--main-bg);
+}
+
+.file-field {
+  text-align: center;
+  border: 1px dashed #808585;
+  cursor: pointer;
+  input {
+    width: 100%;
+  }
+}
