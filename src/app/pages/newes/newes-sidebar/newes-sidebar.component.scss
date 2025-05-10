@@ -1,0 +1,43 @@
+.sidebar-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  .newes-category,
+  .last-newes {
+    background-color: rgba(235, 236, 236, 50%);
+    padding: 1rem;
+    border-radius: 25px;
+    ul {
+      cursor: pointer;
+      li {
+        font-size: 12px;
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 9%);
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  .last-newes {
+    img {
+      width: 80px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .newes {
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      p {
+        font-size: 14px;
+      }
+      span {
+        font-size: 12px;
+      }
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+}

@@ -33,5 +33,10 @@ export const routes: Routes = [
                     .then(m => m.JobDetailsComponent)
             }
         ]
+    },
+    {
+        path: 'newes',
+        loadComponent: () => import('./pages/newes/newes.component')
+            .then(m => m.NewesComponent)
     }
 ];
