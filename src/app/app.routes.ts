@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { JobListComponent } from './pages/jobs/job-list/job-list.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
+import { NewesListComponent } from './pages/newes/newes-list/newes-list.component';
+import { NewesDetalisComponent } from './pages/newes/newes-detalis/newes-detalis.component';
 
 export const routes: Routes = [
     {
@@ -37,6 +39,18 @@ export const routes: Routes = [
     {
         path: 'newes',
         loadComponent: () => import('./pages/newes/newes.component')
-            .then(m => m.NewesComponent)
+            .then(m => m.NewesComponent),
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./pages/newes/newes-list/newes-list.component')
+                    .then(m => m.NewesListComponent)
+            },
+            {
+                path: ':id',
+                loadComponent: () => import('./pages/newes/newes-detalis/newes-detalis.component')
+                    .then(m => m.NewesDetalisComponent)
+            }
+        ]
     }
 ];
