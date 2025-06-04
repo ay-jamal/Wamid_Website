@@ -1,9 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { JobListComponent } from './pages/jobs/job-list/job-list.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
-import { NewesListComponent } from './pages/newes/newes-list/newes-list.component';
-import { NewesDetalisComponent } from './pages/newes/newes-detalis/newes-detalis.component';
 
 export const routes: Routes = [
     {
@@ -52,5 +49,11 @@ export const routes: Routes = [
                     .then(m => m.NewesDetalisComponent)
             }
         ]
+    },
+    {
+        path: '**',
+        loadComponent: () => import('./shared/under-construction/under-construction.component')
+            .then(m => m.UnderConstructionComponent)
     }
+
 ];

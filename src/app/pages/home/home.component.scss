@@ -136,6 +136,10 @@
     }
     .card-text {
       font-size: 12px;
+      line-clamp: 3 !important; // عدد الأسطر
+      box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis !important;
     }
     a {
       display: inline-block;
@@ -144,6 +148,11 @@
       text-align: left;
     }
   }
+}
+
+.card-img-top {
+  height: 200px; /* يمكنك تعديل الارتفاع حسب رغبتك */
+  object-fit: cover;
 }
 
 @media (max-width: 767px) {
@@ -185,7 +194,7 @@
 @media (max-width: 767px) {
   .contact-us-section {
     .ul {
-      li{
+      li {
         font-size: 12px;
       }
       display: flex;
