@@ -1,39 +1,40 @@
 <div class="sidebar-container">
   <div class="row">
-    <input type="text" placeholder="بحث..." />
+    <input
+      [(ngModel)]="searchText"
+      (keyup.enter)="onSearch()"
+      type="text"
+      placeholder="بحث..."
+    />
   </div>
   <div class="row newes-category">
     <p>التصنيفات</p>
     <ul>
-      <li>أخبار المنظمة</li>
-      <li>مشاريعنا الخيرية</li>
-      <li>قصص النجاح</li>
-      <li>حملات التبرع</li>
-      <li>الفعاليات والأنشطة</li>
+      @for (Category of NewesCategories; track $index) {
+      <li
+        [class.active]="selectedCategoryId === Category.id"
+        (click)="onSelectCategory(Category)"
+      >
+        {{ Category?.name }}
+      </li>
+      }
     </ul>
   </div>
   <div class="row last-newes d-none d-lg-block">
     <p>اخر الأخبار</p>
-    <div class="newes">
-      <img src="/images/newes.png" alt="" />
+    @for (Newes of LastNewes; track $index) {
+    <div class="newes" [routerLink]="['/newes', Newes.id]">
+      <img
+        [src]="'data:image/jpeg;base64,' + Newes.sliderImages[0].imageData"
+        alt=""
+      />
       <div class="newes-content">
-        <p class="title primary-color">زيارة نائب الممثل الخاص للأمين العام،</p>
-        <span>
-          استقبل مركز بيتي اجدابياالمدار من قبل مؤسسة وميض للتنمية ...
+        <p class="title primary-color">{{ Newes?.title }}</p>
+        <span class="description">
+          {{ Newes?.description }}
         </span>
       </div>
     </div>
-    <div class="newes">
-      <img src="/images/newes2.jpg" alt="" />
-      <div class="newes-content">
-        <p class="title primary-color">
-          وميض تختتم الخيم التقني الأول لهواة التقنية
-        </p>
-        <span>
-          في إطار إحياء اليوم العالمي للطفل، نظم مركز بيتي في اجدابيا جلسة
-          خارجية مميزة جمعت الأطفال في أجواء من المرح والنقاش
-        </span>
-      </div>
-    </div>
+    }
   </div>
 </div>

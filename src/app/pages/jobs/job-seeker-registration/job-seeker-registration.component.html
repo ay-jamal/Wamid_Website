@@ -6,46 +6,29 @@
   >
     <div class="carousel-inner">
       <div class="carousel-caption d-none d-md-block">
-        <h5>الرئيسية / الوظائف / اخصائي اجتماعي</h5>
-        <p>{{ JobDetails?.jobTitle }}</p>
+        <h5>الرئيسية / الوظائف / التسجيل</h5>
+        <p>التسجيل كباحث عن وظيفية</p>
       </div>
       <div class="carousel-item active">
         <img src="/images/newes-cover.webp" class="d-block w-100" alt="..." />
       </div>
     </div>
   </div>
-  <div class="job-details-section section-padding">
-    <div class="row mb-2 mb-sm-0 basic-info">
-      <div class="col">
-        <p class="title mb-2">الوصف الوظيفي</p>
-        <p class="descreption p-2">
-          {{ JobDetails?.jobDescription }}
-        </p>
-      </div>
-      <div class="col"></div>
+  <div
+    class="jobs section-padding d-flex justify-content-center flex-column align-items-center"
+  >
+    <div class="row my-4">
+      <h3 class="section-name">
+        <span class="line"></span>
+        التسجيل كباحث عن وضيفية
+      </h3>
+      <p class="section-header text-center">
+        "سجّل الآن وكن على مقربة من الفرصة التي تستحقها."
+      </p>
     </div>
     <div class="row">
-      <p class="title mb-2 mb-sm-0">المهام والمسؤوليات</p>
-      <ul class="p-2">
-        <li *ngFor="let item of responsibilitiesList">{{ item }}</li>
-      </ul>
-    </div>
-    <div class="row my-2 mb-sm-0">
-      <p class="title mb-2">المؤهلات والخبرات المطلوبة:</p>
-      <ul class="p-2">
-        <li *ngFor="let item of qualificationsList">{{ item }}</li>
-      </ul>
-    </div>
-    <div class="row">
-      <p class="title mb-2">المزايا</p>
-      <ul class="p-2">
-        <li *ngFor="let item of benefitsList">{{ item }}</li>
-      </ul>
-    </div>
-    <hr />
-    <div class="row">
-      <p class="title">نموذج التقديم على الوظيفة</p>
-      <form [formGroup]="JobApplicationForm">
+      <p class="title">نموذج باحث عن الوظيفة</p>
+      <form [formGroup]="RegistrationForm">
         <div class="row mt-4 mb-2">
           <div class="col">
             <input formControlName="FullName" type="text" placeholder="الأسم" />
@@ -72,7 +55,7 @@
             <div class="form-feaild file-field">
               <input
                 dir="auto"
-                class="feaild-input feaild-input-error file-input"
+                class="feaild-input feaild-input-error file-input w-100"
                 nbInput
                 type="file"
                 hidden
@@ -88,10 +71,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <button (click)="submit()" type="btn" class="btn primary w-100">
-              إرسال
-            </button>
+          <div class="col w-100">
+            <button (click)="submit()" class="btn primary w-100">إرسال</button>
           </div>
         </div>
       </form>

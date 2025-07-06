@@ -4,26 +4,23 @@
       <div class="d-flex">
         <p>
           <img class="icon" src="/icons/inbox.png" alt="" />
-          infoamid&#64;.org
+          {{ ContactInfo?.email }}
         </p>
-        <p>
+        <p class="ms-1" dir="ltr">
+          {{ ContactInfo?.phone }}
           <img class="icon" src="/icons/phone.png" alt="" />
-          +218 91 6636376
         </p>
       </div>
     </div>
     <div class="col d-flex justify-content-end align-items-center">
       <div class="d-flex gap-2">
-        <a href="https://www.facebook.com/wamidd.org" target="_blank">
+        <a [href]="ContactInfo?.facebookLink" target="_blank">
           <img class="icon" src="/icons/facebook.png" alt="" />
         </a>
-        <a href="https://www.instagram.com/wamiddorg/" target="_blank">
+        <a [href]="ContactInfo?.instagramLink" target="_blank">
           <img class="icon" src="/icons/instagram.png" alt="" />
         </a>
-        <a
-          href="https://www.tiktok.com/@wamid.org?_t=ZM-8wvXaaqyZGw&_r=1"
-          target="_blank"
-        >
+        <a [href]="ContactInfo?.tikTokLink" target="_blank">
           <img class="icon" src="/icons/tiktok.png" alt="" />
         </a>
       </div>

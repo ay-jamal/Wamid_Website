@@ -37,15 +37,10 @@
         معًا لإحداث تأثير إيجابي ومستدام في المجتمع.
       </p>
     </div>
-    <div class="our-partners-logos p-2">
-      <img src="/images/our-partners-logos/INTERSOS.png" alt="" />
-      <img src="/images/our-partners-logos/acted.png" alt="" />
-      <img src="/images/our-partners-logos/شعار_الحكومة_الليبية_فرع_الهلال_النفطي.png" alt="" />
-      <img
-        src="/images/our-partners-logos/الهلال الأحمر الليبي فرع اجدابيا.png"
-        alt=""
-      />
-      <img src="/images/our-partners-logos/oea.webp" alt="" />
+    <div class="our-partners-logos justify-content-center p-2">
+      @for (Partner of Partners; track $index) {
+      <img [src]="Partner.imageSrc" alt="Partner Logo" />
+      }
     </div>
   </div>
 </div>

@@ -10,12 +10,14 @@ export const routes: Routes = [
     }
     , {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        data: { animation: 'HomePage' }
     },
     {
         path: 'our-partners',
         loadComponent: () => import('./pages/our-partners/our-partners.component')
-            .then(m => m.OurPartnersComponent)
+            .then(m => m.OurPartnersComponent),
+        data: { animation: 'our-partners' }
     },
     {
         path: 'jobs',
@@ -27,10 +29,15 @@ export const routes: Routes = [
                     .then(m => m.JobListComponent)
             },
             {
+                path: 'job-seeker-registration',
+                loadComponent: () => import('./pages/jobs/job-seeker-registration/job-seeker-registration.component')
+                    .then(m => m.JobSeekerRegistrationComponent)
+            },
+            {
                 path: ':id',
                 loadComponent: () => import('./pages/jobs/job-details/job-details.component')
                     .then(m => m.JobDetailsComponent)
-            }
+            },
         ]
     },
     {

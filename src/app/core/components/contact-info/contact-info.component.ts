@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
+import { ContactInfoService } from '../../../services/contact-info.service';
 
 @Component({
   selector: 'app-contact-info',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './contact-info.component.html',
   styleUrl: './contact-info.component.scss'
 })
-export class ContactInfoComponent {
+export class ContactInfoComponent implements OnInit {
+
+  ContactInfoService = inject(ContactInfoService)
+
+  @Input() ContactInfo: any
+
+  ngOnInit(): void {
+  }
 
 }

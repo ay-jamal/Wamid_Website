@@ -31,8 +31,8 @@
         <img src="/images/cover1.png" class="d-block w-100" alt="..." />
       </div>
       <div class="carousel-caption d-none d-md-block">
-        <h5>لنحدث فرقًا بحب وعطاء لا حدود له</h5>
-        <p>وميض - نحو مستقبل مشرق</p>
+        <h5>{{ orgProfile?.title }}</h5>
+        <p>{{ orgProfile?.subTitle }}</p>
       </div>
       <div class="carousel-item">
         <img src="/images/cover2.webp" class="d-block w-100" alt="..." />
@@ -64,27 +64,29 @@
     <div class="row d-flex align-items-end text-center">
       <div class="col statistics">
         <img src="/icons/meeting_conference.png" alt="" />
-        <p class="number primary-color">15</p>
+        <p class="number primary-color">
+          {{ orgProfile?.dialogueSessionsCount }}
+        </p>
         <p class="title">الجلسات الحوارية</p>
       </div>
       <div class="col statistics">
         <img src="/icons/assistant_educator.png" alt="" />
-        <p class="number primary-color">58</p>
+        <p class="number primary-color">{{ orgProfile?.workshopsCount }}</p>
         <p class="title">عدد ورش العمل</p>
       </div>
       <div class="col statistics">
         <img src="/icons/Group.png" alt="" />
-        <p class="number primary-color">17</p>
+        <p class="number primary-color">{{ orgProfile?.trainersCount }}</p>
         <p class="title">عدد المدربين</p>
       </div>
       <div class="col statistics">
         <img src="/icons/users_group.png" alt="" />
-        <p class="number primary-color">3557</p>
+        <p class="number primary-color">{{ orgProfile?.traineesCount }}</p>
         <p class="title">عدد المتدربين</p>
       </div>
       <div class="col satistics">
         <img src="/icons/bus_school.png" alt="" />
-        <p class="number primary-color">37</p>
+        <p class="number primary-color">{{ orgProfile?.fieldVisitsCount }}</p>
         <p class="title">الزيارات الميدانية</p>
       </div>
     </div>
@@ -99,47 +101,26 @@
           <span class="line"></span>
           عن المؤسسة
         </h3>
-        <p class="section-header">نهدف الى تنمية مجتمعية شاملة يقودها الشباب</p>
+        <p class="section-header">{{ orgProfile?.aboutUsTitle }}</p>
         <p class="section-paragraph">
-          نسعى إلى تمكين الأفراد وبناء قدراتهم من خلال برامج تعليمية وتوعوية
-          وتنموية مبتكرة. ونعمل على تهيئة البيئة الداعمة ، والمساهمة في بناء
-          مجتمع مزدهرومستدام ، من خلال شراكات فاعلة ومبادرات ملهمة تصل إلى كافة
-          شرائح المجتمع. لتكون وميض ضوء ينير رحلة كل من تصله خدماتنا
+          {{ orgProfile?.aboutUsDescription }}
         </p>
-        <ul class="my-2">
-          <div class="row mb-2">
-            <div class="col">
+        <ul class="my-2 row">
+          <ng-container
+            *ngFor="let goal of organizationGoalsList; let i = index"
+          >
+            <div class="col-12 col-md-6 mb-2">
               <li>
                 <img src="/icons/circle-check.png" alt="" />
-                اشراك الشباب في العمل المجتمعي
+                {{ goal }}
               </li>
             </div>
-            <div class="col">
-              <li>
-                <img src="/icons/circle-check.png" alt="" />
-                تحقيق التنمية المستدامة
-              </li>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <li>
-                <img src="/icons/circle-check.png" alt="" />
-                اكتشاف المواهب وتطويرها
-              </li>
-            </div>
-            <div class="col">
-              <li>
-                <img src="/icons/circle-check.png" alt="" />
-                رفع الوعي المجتمعي
-              </li>
-            </div>
-          </div>
+          </ng-container>
         </ul>
       </div>
     </div>
   </div>
-  <div class="our-program-section">
+  <div class="our-program-section animate-on-scroll">
     <div class="row">
       <div class="col-12 col-md-6 section-padding">
         <h3 class="section-name basic-color">
@@ -166,7 +147,7 @@
       </div>
     </div>
   </div>
-  <div class="newes-section mb-4 section-padding">
+  <div class="newes-section mb-4 section-padding animate-on-scroll">
     <div class="row">
       <h3 class="section-name">
         <span class="line"></span>
@@ -229,7 +210,7 @@
       </div>
     </div>
   </div>
-  <div class="images-gallery-section mt-4 text-center">
+  <div class="images-gallery-section mt-4 text-center animate-on-scroll">
     <div class="row seection-padding">
       <h3 class="section-name">
         <span class="line"></span>
@@ -296,7 +277,7 @@
       </div>
     </div>
   </div>
-  <div class="contact-us-section section-padding">
+  <div class="contact-us-section section-padding animate-on-scroll">
     <div class="contact-us-card section-padding">
       <div class="row">
         <div class="col-12 col-md-6">
@@ -312,17 +293,17 @@
               على مزيد من المعلومات عن خدماتنا.
             </p>
             <div class="ul">
-              <li class="my-3">
+              <li class="my-3" dir="ltr">
+                <span class="me-1"> {{ orgProfile?.phone }}</span>
                 <img src="/icons/circle-phone.png" alt="" />
-                +218 92 6636376
               </li>
               <li class="my-2">
                 <img src="/icons/circle-email.png" alt="" />
-                infoamid&#64;.org
+                {{ orgProfile?.email }}
               </li>
               <li class="my-2">
                 <img src="/icons/circle-location.png" alt="" />
-                اجدابيا - ليبيا
+                {{ orgProfile?.location }}
               </li>
             </div>
           </div>

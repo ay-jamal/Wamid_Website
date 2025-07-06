@@ -39,6 +39,11 @@
     }
     .card-text {
       font-size: 12px;
+      display: -webkit-box; /* نمط WebKit لعرض الصندوق */
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4; /* عدد الأسطر التي تريد إظهارها */
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     a {
       display: inline-block;

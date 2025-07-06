@@ -1,52 +1,30 @@
 <div class="row cards mt-4">
+  @for (Newes of NewesList; track $index) {
   <div class="card" style="width: 18rem; padding: 0">
-    <img src="/images/newes.png" class="card-img-top" alt="..." />
+    <img
+      [src]="'data:image/jpeg;base64,' + Newes.sliderImages[0].imageData"
+      class="card-img-top"
+      alt="..."
+    />
     <div class="card-body">
       <div class="d-flex justify-content-between mb-2">
-        <span style="font-size: 9px" class="primary-color">تصنيف 1</span>
-        <span style="font-size: 9px" class="primary-color">05-05-2025</span>
+        <span style="font-size: 9px" class="primary-color">{{
+          Newes?.categoryName
+        }}</span>
+        <span style="font-size: 9px" class="primary-color">{{
+          Newes?.createdAt | date : "dd/MM/yyyy"
+        }}</span>
       </div>
       <h5 class="card-title">
-        زيارة نائب الممثل الخاص للأمين العام،المنسق المقيم ومنسق الشؤون
-        الإنسانية لمركز بيتي اجدابيا
+        {{ Newes?.title }}
       </h5>
       <p class="card-text">
-        استقبل مركز بيتي اجدابياالمدار من قبل مؤسسة وميض للتنمية تحت اشراف منظمة
-        انترسوس وبدعم من اليونيسيف اليوم ...
+        {{ Newes?.description }}
       </p>
-      <!-- <a href="" class="primary-color">عرض المزيد</a> -->
+      <a [routerLink]="['/newes', Newes.id]" class="primary-color"
+        >عرض المزيد</a
+      >
     </div>
   </div>
-  <div class="card" style="width: 18rem; padding: 0">
-    <img src="/images/newes1.jpg" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <div class="d-flex justify-content-between mb-2">
-        <span style="font-size: 9px" class="primary-color">تصنيف 1</span>
-        <span style="font-size: 9px" class="primary-color">03-06-2025</span>
-      </div>
-      <h5 class="card-title">
-        وميض تختتم الخيم التقني الأول لهواة التقنية بمدينة اجدابيا
-      </h5>
-      <p class="card-text">
-        في إطار إحياء اليوم العالمي للطفل، نظم مركز بيتي في اجدابيا جلسة خارجية
-        مميزة جمعت الأطفال في أجواء من المرح والنقاش.
-      </p>
-      <!-- <a href="" class="primary-color">عرض المزيد</a> -->
-    </div>
-  </div>
-  <div class="card" style="width: 18rem; padding: 0">
-    <img src="/images/newes2.jpg" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <div class="d-flex justify-content-between mb-2">
-        <span style="font-size: 9px" class="primary-color">تصنيف 1</span>
-        <span style="font-size: 9px" class="primary-color">01-11-2024</span>
-      </div>
-      <h5 class="card-title">مركز بتيتي اجدابيا يحيي اليوم العالمي للبيئة</h5>
-      <p class="card-text">
-        في إطار إحياء اليوم العالمي للطفل، نظم مركز بيتي في اجدابيا جلسة خارجية
-        مميزة جمعت الأطفال في أجواء من المرح والنقاش.
-      </p>
-      <!-- <a href="" class="primary-color">عرض المزيد</a> -->
-    </div>
-  </div>
+  }
 </div>

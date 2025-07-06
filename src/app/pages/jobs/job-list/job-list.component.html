@@ -23,36 +23,30 @@
         الوظائف المتاحة
       </h3>
       <p class="section-header text-center">انضم إلينا وكن جزءًا من التغيير</p>
+      <p class="text-center">
+        التسجيل كباحث عن عمل ؟
+        <span
+          ><a class="primary-color" routerLink="/jobs/job-seeker-registration"
+            >سجل الأن</a
+          ></span
+        >
+      </p>
     </div>
+    @if (Jobs.lenght == 0) {
+    <p class="text-center">لايوجد وظائف منشوره الى الأن عاود لاحقا</p>
+    }@else{ @for (Job of Jobs; track $index) {
     <div class="job-card mb-3">
       <div class="start">
         <img src="/icons/pencil_edit.png" alt="" />
         <div class="content">
-          <p class="title">معلم غير رسمي</p>
-          <p class="location">اجدابيا - ليبيا</p>
+          <p class="title">{{ Job.jobTitle }}</p>
+          <p class="location">{{ Job.location }}</p>
         </div>
       </div>
-      <button type="button" class="btn primary">التفاصيل</button>
+      <button (click)="openJobDetalis(Job)" class="btn primary">
+        التفاصيل
+      </button>
     </div>
-    <div class="job-card mb-3">
-      <div class="start">
-        <img src="/icons/pencil_edit.png" alt="" />
-        <div class="content">
-          <p class="title">اخصائي اجتماعي - ادارة الحالات الفردية</p>
-          <p class="location">اجدابيا - ليبيا</p>
-        </div>
-      </div>
-      <button type="button" class="btn primary">التفاصيل</button>
-    </div>
-    <div class="job-card mb-3">
-      <div class="start">
-        <img src="/icons/pencil_edit.png" alt="" />
-        <div class="content">
-          <p class="title">مدخل بيانات</p>
-          <p class="location">اجدابيا - ليبيا</p>
-        </div>
-      </div>
-      <button type="button" class="btn primary">التفاصيل</button>
-    </div>
+    } }
   </div>
 </div>

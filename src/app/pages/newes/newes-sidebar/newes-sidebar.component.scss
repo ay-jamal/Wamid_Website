@@ -19,6 +19,7 @@
       }
     }
   }
+
   .last-newes {
     img {
       width: 80px;
@@ -35,9 +36,23 @@
       span {
         font-size: 12px;
       }
-      &:hover{
-        opacity: .8;
+      &:hover {
+        opacity: 0.8;
       }
     }
+  }
+}
+
+.description {
+  display: -webkit-box; /* نمط WebKit لعرض الصندوق */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* عدد الأسطر التي تريد إظهارها */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul {
+  li.active {
+    opacity: 0.6 !important;
   }
 }

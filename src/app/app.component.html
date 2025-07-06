@@ -1,6 +1,12 @@
 <div class="main-container">
-  <app-contact-info />
+  <app-contact-info [ContactInfo]="ContactInfo" />
   <app-header />
-  <router-outlet #outlet="outlet" />
-  <app-footer />
+
+  <main class="page-content">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>
+
+  <app-footer [ContactInfo]="ContactInfo" />
 </div>
+
+<!-- [@routeAnimations]="prepareRoute(outlet)" -->
