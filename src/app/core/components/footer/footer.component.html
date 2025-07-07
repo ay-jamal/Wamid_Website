@@ -1,54 +1,54 @@
-<div class="footer-container">
+<div class="footer-container" role="contentinfo" aria-label="Footer">
   <div class="row section-padding">
     <div class="col-12 col-md-4 icons">
       <div class="row">
-        <img class="logo" src="/icons/logo.png" alt="" />
+        <img class="logo" src="/icons/logo.png" alt="شعار وميض" />
       </div>
       <div class="row my-4">
         <p>ملتزمون بالعمل الإنساني لتعزيز رفاهية المجتمع.</p>
       </div>
       <div class="row">
-        <img class="social-icon" src="/icons/facebook.png" alt="" />
-        <img class="social-icon" src="/icons/instagram.png" alt="" />
-        <img class="social-icon" src="/icons/tiktok.png" alt="" />
+        <img class="social-icon" src="/icons/facebook.png" alt="فيسبوك" aria-label="فيسبوك" />
+        <img class="social-icon" src="/icons/instagram.png" alt="انستغرام" aria-label="انستغرام" />
+        <img class="social-icon" src="/icons/tiktok.png" alt="تيك توك" aria-label="تيك توك" />
       </div>
     </div>
-    <div class="col-12 col-md-4 importent-links">
+    <div class="col-12 col-md-4 importent-links" role="navigation" aria-label="Important links">
       <div class="row">
         <h4 class="mb-2">روابط مهمة</h4>
         <ul>
           <li>
-            <a routerLink="/home">الرئيسية</a>
+            <a routerLink="/home" aria-label="الرئيسية">الرئيسية</a>
           </li>
           <!-- <li>
             <a href="">عن المؤسسة</a>
           </li> -->
           <li>
-            <a href="">برامجنا</a>
+            <a href="" aria-label="برامجنا">برامجنا</a>
           </li>
           <li>
-            <a routerLink="/newes"> الاخبار </a>
+            <a routerLink="/newes" aria-label="الاخبار"> الاخبار </a>
           </li>
           <li>
-            <a routerLink="/jobs">الوظائف</a>
+            <a routerLink="/jobs" aria-label="الوظائف">الوظائف</a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="col-12 col-md-4 contact-us">
+    <div class="col-12 col-md-4 contact-us" aria-label="Contact us section">
       <div class="row">
         <h4 class="mb-2">تواصل معنا</h4>
         <ul>
           <li class="ms-1 justify-content-end" dir="ltr">
             {{ ContactInfo?.phone }}
-            <img src="/icons/phone-footer.png" alt="" />
+            <img src="/icons/phone-footer.png" alt="هاتف" aria-label="هاتف" />
           </li>
           <li>
-            <img src="/icons/email-footer.png" alt="" />
+            <img src="/icons/email-footer.png" alt="بريد إلكتروني" aria-label="بريد إلكتروني" />
             {{ ContactInfo?.email }}
           </li>
           <li>
-            <img src="/icons/location-footer.png" alt="" />
+            <img src="/icons/location-footer.png" alt="موقع" aria-label="موقع" />
             {{ ContactInfo?.location }}
           </li>
         </ul>

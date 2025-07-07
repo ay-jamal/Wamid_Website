@@ -1,9 +1,9 @@
-<div class="main-container">
+<div class="main-container" role="main" aria-label="Main container">
   <app-contact-info [ContactInfo]="ContactInfo" />
   <app-header />
 
-  <main class="page-content">
-    <router-outlet #outlet="outlet"></router-outlet>
+  <main class="page-content" role="region" aria-label="Page content">
+    <router-outlet #outlet="outlet" aria-label="Page content outlet"></router-outlet>
   </main>
 
   <app-footer [ContactInfo]="ContactInfo" />

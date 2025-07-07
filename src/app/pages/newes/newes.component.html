@@ -1,12 +1,15 @@
-<div class="newes-container">
+<div class="newes-container" role="main" aria-label="News main container">
   <div
     id="carouselExampleSlidesOnly"
     class="carousel slide"
     data-bs-ride="carousel"
+    role="region"
+    aria-label="News carousel"
+    aria-live="polite"
   >
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/our-partners.webp" class="d-block w-100" alt="..." />
+        <img src="/images/our-partners.webp" class="d-block w-100" alt="شركاؤنا" />
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h5>الرئيسية / الأخبار</h5>
@@ -16,18 +19,18 @@
         <img
           src="/images/programs-cover.webp"
           class="d-block w-100"
-          alt="..."
+          alt="غلاف البرامج"
         />
       </div>
     </div>
   </div>
-  <div class="newes-section section-padding">
+  <div class="newes-section section-padding" role="region" aria-label="News section">
     <div class="row">
       <div class="col-12 col-lg-4">
         <app-newes-sidebar></app-newes-sidebar>
       </div>
       <div class="col-12 col-lg-8">
-        <router-outlet></router-outlet>
+        <router-outlet aria-label="News content outlet"></router-outlet>
       </div>
     </div>
   </div>
