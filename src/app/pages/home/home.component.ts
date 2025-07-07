@@ -54,6 +54,17 @@ export class HomeComponent implements OnInit {
         });
         elements.forEach((el: Element) => observer.observe(el));
 
+        // Immediately trigger animation for elements already in view
+        setTimeout(() => {
+          elements.forEach((el: Element) => {
+            const rect = (el as HTMLElement).getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add('animate');
+              observer.unobserve(el);
+            }
+          });
+        }, 0);
+
         // Count-up animation for statistics
         const statsSection = this.el.nativeElement.querySelector('.statistics-sectin');
         if (statsSection) {
@@ -66,6 +77,15 @@ export class HomeComponent implements OnInit {
             });
           }, { threshold: 0.3 });
           statsObserver.observe(statsSection);
+
+          // Immediately trigger count-up if already in view
+          setTimeout(() => {
+            const rect = (statsSection as HTMLElement).getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              this.startCountUp();
+              statsObserver.unobserve(statsSection);
+            }
+          }, 0);
         }
       }
     })
